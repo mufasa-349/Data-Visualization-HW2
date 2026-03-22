@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.11.24)  23 MAR 2026 02:12
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.11.24)  23 MAR 2026 02:23
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -280,8 +280,8 @@ File: lstmisc.sty 2024/09/23 1.10c (Carsten Heinz)
 File: listings.cfg 2024/09/23 1.10c listings configuration
 ))
 Package: listings 2024/09/23 1.10c (Carsten Heinz)
-Package hyperref Info: Option `colorlinks' set `true' on input line 29.
-LaTeX Font Info:    Trying to load font information for T1+lmr on input line 35.
+Package hyperref Info: Option `colorlinks' set `true' on input line 30.
+LaTeX Font Info:    Trying to load font information for T1+lmr on input line 36.
  (/usr/local/texlive/2025basic/texmf-dist/tex/latex/lm/t1lmr.fd
 File: t1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 ) (/usr/local/texlive/2025basic/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
@@ -291,24 +291,24 @@ File: l3backend-pdftex.def 2024-05-08 L3 backend support: PDF output (pdfTeX)
 ) (./homework-report.aux)
 \openout1 = `homework-report.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -369,7 +369,7 @@ File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
 Package color Info: Driver file: pdftex.def on input line 149.
  (/usr/local/texlive/2025basic/texmf-dist/tex/latex/graphics/mathcolor.ltx))
-Package hyperref Info: Link coloring ON on input line 35.
+Package hyperref Info: Link coloring ON on input line 36.
  (./homework-report.out) (./homework-report.out)
 \@outlinefile=\write3
 \openout3 = `homework-report.out'.
@@ -378,38 +378,38 @@ Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
 \c@lstlisting=\count310
-LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 37.
+LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 38.
  (/usr/local/texlive/2025basic/texmf-dist/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OML+lmm on input line 37.
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 38.
  (/usr/local/texlive/2025basic/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 37.
+LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 38.
  (/usr/local/texlive/2025basic/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 37.
+LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 38.
  (/usr/local/texlive/2025basic/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 37.
+(Font)              <12> on input line 38.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 37.
+(Font)              <8> on input line 38.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 37.
-LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 40.
+(Font)              <6> on input line 38.
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 41.
  (/usr/local/texlive/2025basic/texmf-dist/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 40.
+(Font)              <10> on input line 41.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 40.
+(Font)              <7> on input line 41.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 40.
+(Font)              <5> on input line 41.
 LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 63.
  (/usr/local/texlive/2025basic/texmf-dist/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
@@ -427,7 +427,7 @@ Overfull \hbox (15.87254pt too wide) in paragraph at lines 67--68
 []\T1/lmr/bx/n/10.95 Deliverables: \T1/lmr/m/n/10.95 Runnable ap-pli-ca-tion (\T1/lmtt/m/n/10.95 dashboard.py\T1/lmr/m/n/10.95 ), con-fig-u-ra-tion (\T1/lmtt/m/n/10.95 .streamlit/config.toml
  []
 
-<task1-a.png, id=168, 1445.4pt x 813.0375pt>
+<task1-a.png, id=167, 1445.4pt x 813.0375pt>
 File: task1-a.png Graphic file (type png)
 <use task1-a.png>
 Package pdftex.def Info: task1-a.png  used on input line 91.
@@ -441,7 +441,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 165--166
 []\T1/lmtt/m/n/10 st.plotly_chart(..., width="stretch") \T1/lmr/m/n/10 in-
  []
 
-<task1-b.png, id=189, 2890.8pt x 2270.4825pt>
+<task1-b.png, id=188, 2890.8pt x 2270.4825pt>
 File: task1-b.png Graphic file (type png)
 <use task1-b.png>
 Package pdftex.def Info: task1-b.png  used on input line 179.
@@ -479,7 +479,7 @@ Overfull \hbox (0.53918pt too wide) in paragraph at lines 260--260
 [8]
 LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <12> not available
 (Font)              Font shape `T1/lmtt/b/n' tried instead on input line 265.
-<sketch1.jpeg, id=217, 1003.75pt x 1731.46875pt>
+<sketch1.jpeg, id=216, 1003.75pt x 1731.46875pt>
 File: sketch1.jpeg Graphic file (type jpg)
 <use sketch1.jpeg>
 Package pdftex.def Info: sketch1.jpeg  used on input line 269.
@@ -498,7 +498,7 @@ Overfull \hbox (29.67746pt too wide) in paragraph at lines 279--280
 [9]
 
 [10 <./sketch1.jpeg>]
-<sketch2.jpeg, id=227, 1003.75pt x 1731.46875pt>
+<sketch2.jpeg, id=226, 1003.75pt x 1731.46875pt>
 File: sketch2.jpeg Graphic file (type jpg)
 <use sketch2.jpeg>
 Package pdftex.def Info: sketch2.jpeg  used on input line 316.
@@ -512,12 +512,12 @@ Overfull \hbox (10.75084pt too wide) in paragraph at lines 326--327
 []\T1/lmr/bx/n/10.95 Baseline com-par-isons: \T1/lmr/m/n/10.95 To-day's HRV/RHR are shown with \T1/lmtt/m/n/10.95 hrv_baseline \T1/lmr/m/n/10.95 and \T1/lmtt/m/n/10.95 rhr_baseline
  []
 
-<sketch3.jpeg, id=228, 1372.12625pt x 2055.68pt>
+<sketch3.jpeg, id=227, 1372.12625pt x 2055.68pt>
 File: sketch3.jpeg Graphic file (type jpg)
 <use sketch3.jpeg>
 Package pdftex.def Info: sketch3.jpeg  used on input line 343.
 (pdftex.def)             Requested size: 218.51521pt x 327.34717pt.
-<d3js-design.png, id=229, 410.53375pt x 775.89874pt>
+<d3js-design.png, id=228, 410.53375pt x 775.89874pt>
 File: d3js-design.png Graphic file (type png)
 <use d3js-design.png>
 Package pdftex.def Info: d3js-design.png  used on input line 349.
@@ -539,18 +539,18 @@ Package rerunfilecheck Info: File `homework-report.out' has not changed.
 (rerunfilecheck)             Checksum: F1B6DA74C2DD3D45E82EFA4721C83932;9174.
  ) 
 Here is how much of TeX's memory you used:
- 13108 strings out of 474662
- 208228 string characters out of 5751108
- 673574 words of memory out of 5000000
+ 13106 strings out of 474662
+ 208200 string characters out of 5751108
+ 671574 words of memory out of 5000000
  35914 multiletter control sequences out of 15000+600000
  630504 words of font info for 80 fonts, out of 8000000 for 9000
  319 hyphenation exceptions out of 8191
  75i,10n,79p,827b,1073s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2025basic/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/2025basic/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2025basic/texmf-dist/fonts/type1/public/lm/lmbx8.pfb></usr/local/texlive/2025basic/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2025basic/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2025basic/texmf-dist/fonts/type1/public/lm/lmr17.pfb></usr/local/texlive/2025basic/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/local/texlive/2025basic/texmf-dist/fonts/type1/public/lm/lmri10.pfb></usr/local/texlive/2025basic/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2025basic/texmf-dist/fonts/type1/public/lm/lmtk10.pfb></usr/local/texlive/2025basic/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></usr/local/texlive/2025basic/texmf-dist/fonts/type1/public/lm/lmtt9.pfb>
-Output written on homework-report.pdf (14 pages, 1221851 bytes).
+Output written on homework-report.pdf (14 pages, 1222057 bytes).
 PDF statistics:
- 332 PDF objects out of 1000 (max. 8388607)
- 279 compressed objects within 3 object streams
- 71 named destinations out of 1000 (max. 500000)
+ 333 PDF objects out of 1000 (max. 8388607)
+ 280 compressed objects within 3 object streams
+ 69 named destinations out of 1000 (max. 500000)
  303 words of extra memory for PDF output out of 10000 (max. 10000000)
 

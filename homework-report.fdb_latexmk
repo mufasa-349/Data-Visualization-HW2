@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1774221140.00903 "/Users/mustafabozyel/Github-Desktop/Data-Visualization-HW2/homework-report.tex" "homework-report.pdf" "homework-report" 1774221141.07784 0
-  "/Users/mustafabozyel/Github-Desktop/Data-Visualization-HW2/homework-report.tex" 1774221136.49558 31027 4e5e7b02a48e8242e5af518d4ddb2c39 ""
+["pdflatex"] 1774221788.38215 "/Users/mustafabozyel/Github-Desktop/Data-Visualization-HW2/homework-report.tex" "homework-report.pdf" "homework-report" 1774221789.47404 0
+  "/Users/mustafabozyel/Github-Desktop/Data-Visualization-HW2/homework-report.tex" 1774221788.14637 31331 290f8e849d1680e7bdcc53eef8bd6903 ""
   "/usr/local/texlive/2025basic/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc" 1254269338 2375 baa924870cfb487815765f9094cf3728 ""
   "/usr/local/texlive/2025basic/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc" 1202520719 2840 216e6e45ad352e2456e1149f28885bee ""
   "/usr/local/texlive/2025basic/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc" 1254269338 3031 6c4d3515bf7115d8518af1c9ab97ca44 ""
@@ -118,9 +118,9 @@
   "/usr/local/texlive/2025basic/texmf-var/web2c/pdftex/pdflatex.fmt" 1763937976 2663840 122873bebfb0b205db88accc91ab480d ""
   "/usr/local/texlive/2025basic/texmf.cnf" 1741448314 628 81d1ada0f601fb1ffa62f1323192d946 ""
   "d3js-design.png" 1774220804.7607 131811 c4448d5caef9f821773710f6c43d6bd2 ""
-  "homework-report.aux" 1774221140.99394 9481 5131f3654d889250f14e17b60856584e "pdflatex"
-  "homework-report.out" 1774221140.99474 9174 f1b6da74c2dd3d45e82efa4721c83932 "pdflatex"
-  "homework-report.tex" 1774221136.49558 31027 4e5e7b02a48e8242e5af518d4ddb2c39 ""
+  "homework-report.aux" 1774221789.38269 9481 5131f3654d889250f14e17b60856584e "pdflatex"
+  "homework-report.out" 1774221789.38349 9174 f1b6da74c2dd3d45e82efa4721c83932 "pdflatex"
+  "homework-report.tex" 1774221788.14637 31331 290f8e849d1680e7bdcc53eef8bd6903 ""
   "sketch1.jpeg" 1774218044.96211 194812 b47030e8a16dbab50da33de45c8280ea ""
   "sketch2.jpeg" 1774219125.72657 194812 b47030e8a16dbab50da33de45c8280ea ""
   "sketch3.jpeg" 1774220741.25075 148061 bf663e397b09260fcee4cb580ba00482 ""
