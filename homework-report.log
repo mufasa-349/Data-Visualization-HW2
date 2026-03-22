@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.11.24)  23 MAR 2026 02:23
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.11.24)  23 MAR 2026 02:25
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -541,13 +541,13 @@ Package rerunfilecheck Info: File `homework-report.out' has not changed.
 Here is how much of TeX's memory you used:
  13106 strings out of 474662
  208200 string characters out of 5751108
- 671574 words of memory out of 5000000
+ 672567 words of memory out of 5000000
  35914 multiletter control sequences out of 15000+600000
  630504 words of font info for 80 fonts, out of 8000000 for 9000
  319 hyphenation exceptions out of 8191
  75i,10n,79p,827b,1073s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2025basic/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/2025basic/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2025basic/texmf-dist/fonts/type1/public/lm/lmbx8.pfb></usr/local/texlive/2025basic/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2025basic/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2025basic/texmf-dist/fonts/type1/public/lm/lmr17.pfb></usr/local/texlive/2025basic/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/local/texlive/2025basic/texmf-dist/fonts/type1/public/lm/lmri10.pfb></usr/local/texlive/2025basic/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2025basic/texmf-dist/fonts/type1/public/lm/lmtk10.pfb></usr/local/texlive/2025basic/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></usr/local/texlive/2025basic/texmf-dist/fonts/type1/public/lm/lmtt9.pfb>
-Output written on homework-report.pdf (14 pages, 1222057 bytes).
+Output written on homework-report.pdf (14 pages, 1221717 bytes).
 PDF statistics:
  333 PDF objects out of 1000 (max. 8388607)
  280 compressed objects within 3 object streams
