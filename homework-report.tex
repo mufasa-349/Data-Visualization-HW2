@@ -13,7 +13,18 @@
 \usepackage{enumitem}
 \usepackage{booktabs}
 \usepackage{caption}
+\usepackage{subcaption}
 \usepackage{url}
+\usepackage{listings}
+\lstset{
+  basicstyle=\ttfamily\footnotesize,
+  breaklines=true,
+  breakatwhitespace=true,
+  columns=fullflexible,
+  frame=single,
+  xleftmargin=0.5em,
+  framexleftmargin=0.5em
+}
 
 \hypersetup{colorlinks=true, linkcolor=blue, urlcolor=blue, citecolor=blue}
 
@@ -31,7 +42,7 @@
 \vspace{0.75em}
 
 \begin{abstract}
-This report has two parts. \textbf{Task~1} covers building an interactive Python dashboard for Japan inbound immigration statistics, a Gestalt/Bertin analysis of the interface, and screenshots before and after UI revision (with \textbf{Cursor} as the AI coding assistant). \textbf{Task~2 Part~A} analyzes the \texttt{whoop\_fitness\_dataset\_100k.csv} file: what the columns mean, and which attributes would be most useful in a mobile fitness app and why. \textbf{Task~2 Part~B} presents mobile dashboard sketches (Figures~\ref{fig:sketch1}--\ref{fig:sketch2}), with Gestalt/Bertin-based design notes tied to the CSV attributes.
+This report has two parts. \textbf{Task~1} covers building an interactive Python dashboard for Japan inbound immigration statistics, a Gestalt/Bertin analysis of the interface, and screenshots before and after UI revision (with \textbf{Cursor} as the AI coding assistant). \textbf{Task~2 Part~A} analyzes the \texttt{whoop\_fitness\_dataset\_100k.csv} file: what the columns mean, and which attributes would be most useful in a mobile fitness app and why. \textbf{Task~2 Part~B} presents three paper sketches plus a D3.js prototype (Figure~\ref{fig:sketch3-d3}), with Gestalt/Bertin-based design notes tied to the CSV attributes.
 \end{abstract}
 
 \part{Task 1 --- Japan immigration dashboard}
@@ -39,6 +50,16 @@ This report has two parts. \textbf{Task~1} covers building an interactive Python
 \section{What we did (overview)}
 
 \subsection{Task A --- Interactive dashboard}
+
+\paragraph{Original Cursor prompt (exact).}
+\begin{lstlisting}
+Cursor prompt:
+
+A-) Download the Japan Inbound Immigration data from Kaggle. Create an interactive dashboard with your favorite AI. 
+
+This is my first task in the homework. @japan_immigration_statistics_inbound.csv I have already provided you with the data. I want you to create an interactive dashboard using python. nalayze and understand the data carefully. I have created a venv and i will install requirements there after you create the gui. Make it in english
+\end{lstlisting}
+
 \begin{itemize}[leftmargin=*]
   \item \textbf{What:} We visualized the dataset \texttt{japan\_immigration\_statistics\_inbound.csv} (Japan inbound immigration, annual records from 1950--2005) using an interactive web dashboard.
   \item \textbf{How:} We used \textbf{Python} with \textbf{Streamlit} for layout, filters, and metrics, and \textbf{Plotly} for charts (time series, stacked areas by continent, country rankings, and a heatmap). Dependencies are listed in \texttt{requirements.txt} (\texttt{streamlit}, \texttt{pandas}, \texttt{plotly}). A virtual environment is used for installation.
@@ -52,6 +73,13 @@ This report has two parts. \textbf{Task~1} covers building an interactive Python
   \item \textbf{How:} Findings were written in \texttt{task1-b-gestalt-bertin-analysis.txt}. The same criteria guided UI revisions in \texttt{dashboard.py}.
   \item \textbf{Outcome:} The report below merges that analysis with a \textbf{before/after} narrative: Figure~\ref{fig:before} reflects the pre-revision UI; Section~\ref{sec:revision} summarizes changes aligned with the checklist; Figure~\ref{fig:after} shows the revised dashboard; Section~\ref{sec:compare} states explicitly \emph{what is better} after revision and why.
 \end{itemize}
+
+\subsection{Task C --- \LaTeX{} homework report (prompt)}
+
+\paragraph{Original Cursor prompt (exact).}
+\begin{lstlisting}
+I want you to crete a .tex file for this homework. Include what how and whtt we have done stuff. Also include  @task1-a.png this image before principles and include revised verion @task1-b.png . Add following infos to latex  file @task1-b-gestalt-bertin-analysis.txt that includes analysis results for before and after gestlat and bertin principles revision. Make report english as well
+\end{lstlisting}
 
 \section{Dashboard screenshot (before principles-based revision)}
 \label{sec:before}
@@ -232,7 +260,7 @@ For a mobile app, I would prioritize \textbf{recovery}, \textbf{strain}, \textbf
 \section{Task 2 Part B: Mobile dashboard sketches (Whoop-style CSV)}
 \label{sec:task2b}
 
-This section shows \textbf{two} dashboard sketches (a third sketch can be added the same way). Both follow the Task~2 Part~A column choices and use Gestalt/Bertin ideas for small screens.
+This section shows \textbf{three} paper sketches and the \textbf{D3.js} implementation (\path{d3js.html}) captured in \path{d3js-design.png}. All follow the Task~2 Part~A column choices and use Gestalt/Bertin ideas for small screens.
 
 \subsection{Sketch 1: \texttt{sketch1.jpeg}}
 
@@ -306,6 +334,36 @@ Sketch~2 is a \textbf{dark-mode} layout aimed at high contrast in low light. It 
 \paragraph{Bertin (short).}
 Recovery/Strain stay \textbf{larger} than the monitor tiles (global vs.\ supportive metrics). \textbf{Hue} on zones runs green$\rightarrow$yellow$\rightarrow$orange$\rightarrow$red for aerobic$\rightarrow$anaerobic. \textbf{Orientation:} Horizontal zones save vertical space for labels. \textbf{Position:} Readiness block stays at the \textbf{top} (highest priority).
 
+\subsection{Sketch 3 and D3.js prototype (\texttt{sketch3.jpeg}, \texttt{d3js-design.png})}
+
+\begin{figure}[htbp]
+  \centering
+  \begin{subfigure}[t]{0.48\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{sketch3.jpeg}
+    \caption{Paper sketch 3 (final layout concept).}
+    \label{fig:sketch3}
+  \end{subfigure}\hfill
+  \begin{subfigure}[t]{0.48\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{d3js-design.png}
+    \caption{D3.js dashboard built in \path{d3js.html} (browser screenshot).}
+    \label{fig:d3design}
+  \end{subfigure}
+  \caption{Third dashboard design and the matching D3.js prototype side by side.}
+  \label{fig:sketch3-d3}
+\end{figure}
+
+Sketch~3 closes the set of three concepts. The screenshot \path{d3js-design.png} shows how the same idea is implemented with \textbf{D3.js} (concentric rings, zone bar, metric cards). Below is a short list of what we improved on purpose.
+
+\subsubsection*{Key design enhancements}
+\begin{itemize}[leftmargin=*]
+  \item \textbf{Bertin --- size and orientation:} The \textbf{orbit} uses concentric circles: different \textbf{radius} = different metrics (Strain, Sleep, HRV, RHR), so the user can read ``one system'' at a glance. The \textbf{zone bar} uses a \textbf{linear} (horizontal) layout: left-to-right shows how much time fell in aerobic vs.\ anaerobic HR zones, so \textbf{proportion} of the workout is easy to see.
+  \item \textbf{Gestalt --- proximity:} Health numbers sit in a \textbf{2$\times$2 grid}. HRV and its baseline are \textbf{close together} on the same card, so the brain treats them as one idea: ``current readiness vs.\ normal.''
+  \item \textbf{Color context (similarity):} Card \textbf{left-border} colors are not random: they \textbf{match} the color of the matching ring in the orbit. Same color for the same metric = same mental group (Gestalt \textbf{similarity}).
+  \item \textbf{Health trends (common region):} On the HRV card, a small green ``+1'' (or similar delta) sits \textbf{next to} the main number. That groups the \textbf{change} with the \textbf{value} in one visual region, so the user reads ``status + update'' as one chunk (Gestalt \textbf{common region}).
+\end{itemize}
+
 \section*{AI tooling disclosure}
 
 \noindent
@@ -318,7 +376,8 @@ Task 1 data: \path{japan_immigration_statistics_inbound.csv}.\\
 Task 1 main script: \path{dashboard.py}.\\
 Task 1 analysis notes: \path{task1-b-gestalt-bertin-analysis.txt}.\\
 Task 2 Part A dataset: \path{whoop_fitness_dataset_100k.csv}.\\
-Task 2 Part B sketches: \path{sketch1.jpeg}, \path{sketch2.jpeg}.
+Task 2 Part B sketches: \path{sketch1.jpeg}, \path{sketch2.jpeg}, \path{sketch3.jpeg}.\\
+D3.js prototype: \path{d3js.html}, screenshot \path{d3js-design.png}.
 \end{sloppypar}
 
 \end{document}
