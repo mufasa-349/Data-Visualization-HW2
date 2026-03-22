@@ -1,0 +1,98 @@
+================================================================================
+TASK B — DASHBOARD ANALYSIS (GESTALT & BERTIN)
+Japan Inbound Immigration — Streamlit dashboard (Time series tab, dark theme)
+================================================================================
+
+1. GESTALT PRINCIPLES — WHAT WORKS WELL
+--------------------------------------------------------------------------------
+• Proximity: Filters are grouped in the sidebar; KPI metrics sit in one row, so
+  related controls and related summary numbers read as single units.
+
+• Similarity: Both charts use the same hue family for data (blue), which signals
+  they describe the same phenomenon (immigration counts / change in counts).
+  Tab styling uses a consistent accent (red underline) for the active view.
+
+• Continuity: The line chart uses a connected temporal sequence; the eye can
+  follow the long-term trend from 1950 to 2005 without breaking the time story.
+
+• Figure–ground: On a dark background, light chart elements and white text
+  separate clearly from the panel, supporting quick scanning of values.
+
+• Common region: The main content area is visually bounded vs. the sidebar,
+  separating “controls” from “readout.”
+
+
+2. GESTALT PRINCIPLES — WHAT CAN BE IMPROVED
+--------------------------------------------------------------------------------
+• Similarity (risk of confusion): Red is used for interactive chrome (sliders,
+  active tab) while green is used for the KPI “delta.” Those encodings are
+  semantically different (navigation vs. magnitude); users may need a moment to
+  learn that red is not “bad” data. Consider a single accent for controls and a
+  distinct semantic color only for positive/negative change if you add signed
+  metrics.
+
+• Continuity vs. comparison: YoY % is a bar chart while totals are a line chart.
+  That is appropriate, but the YoY chart starts at 1960 (first year has no prior
+  value). A short caption or axis note (“1960: no prior year”) reduces surprise.
+
+• Proximity: Four KPIs in one row compress a lot of numbers; on narrow screens
+  they may wrap awkwardly. Consider responsive stacking or smaller secondary
+  labels for definitions (“sum of yearly totals” vs. “average per year”).
+
+• Closure: The line chart could include a subtle fill-to-zero area for the total
+  series to reinforce “volume over time” (optional; trade-off with clutter).
+
+
+3. BERTIN’S RETINAL VARIABLES — WHAT WORKS WELL
+--------------------------------------------------------------------------------
+• Position (most effective): Both charts map time to the horizontal axis and
+  magnitude to the vertical axis — the correct priority for trend and comparison.
+
+• Size (text): Title > KPI numerals > axis ticks establishes a clear hierarchy.
+
+• Color value (lightness): Light blue on dark background gives sufficient
+  contrast for the main series and bars.
+
+
+4. BERTIN’S RETINAL VARIABLES — WHAT CAN BE IMPROVED
+--------------------------------------------------------------------------------
+• Hue: Only one data hue appears in the Time series tab; that is good for a
+  single variable. If multiple series are added later, use hue + direct labels
+  (not color alone) for accessibility.
+
+• Saturation / redundant encoding: YoY bars could encode sign with hue (e.g.,
+  muted blue for positive, muted coral for negative) in addition to position
+  above/below zero — reinforcing the Bertin principle of redundant coding for
+  critical comparisons.
+
+• Size (marks): Line markers at every year help readability but add visual
+  noise on long series. Consider markers every N years, or only on hover.
+
+• Texture / shape: Not used; acceptable here. If comparing countries later,
+  avoid relying on texture alone — prefer position + labeled facets or small
+  multiples.
+
+
+5. REVISION CHECKLIST (ACTIONABLE)
+--------------------------------------------------------------------------------
+[ ] Add one-line chart subtitles: what “total” means in the dataset (definition).
+[ ] For YoY bars, optionally color negative years differently from positive years.
+[ ] Ensure color contrast meets WCAG for axis labels on dark theme (lighten gray
+    if tick labels are hard to read).
+[ ] Align y-axis domains or add linked brushing between tabs only if you merge
+    views; otherwise keep tabs independent but use consistent axis styling.
+[ ] Document units in axis titles (“Immigrants (count)” or “persons”) everywhere.
+[ ] If the course allows: add alt-text or a static summary for screen readers.
+
+
+6. SUMMARY
+--------------------------------------------------------------------------------
+Strengths: clear temporal layout (Bertin: position), coherent grouping (Gestalt:
+proximity), and a consistent dark-theme figure–ground separation. Main gaps are
+redundant encoding for signed change (YoY), semantic clarity of accent colors
+(red vs. green), and small accessibility/annotation improvements (units,
+missing first YoY year).
+
+================================================================================
+End of analysis
+================================================================================

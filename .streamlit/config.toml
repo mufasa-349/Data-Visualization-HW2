@@ -1,0 +1,11 @@
+# Aligns Streamlit chrome with dashboard charts (Gestalt: consistent similarity).
+[theme]
+base = "dark"
+primaryColor = "#38BDF8"
+backgroundColor = "#0E1117"
+secondaryBackgroundColor = "#161B22"
+textColor = "#E8EAED"
+font = "sans serif"
+
+[runner]
+fastReruns = true
