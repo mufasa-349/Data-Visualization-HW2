@@ -1,0 +1,5 @@
+Cursor prompt:
+
+A-) Download the Japan Inbound Immigration data from Kaggle. Create an interactive dashboard with your favorite AI. 
+
+This is my first task in the homework. @japan_immigration_statistics_inbound.csv I have already provided you with the data. I want you to create an interactive dashboard using python. nalayze and understand the data carefully. I have created a venv and i will install requirements there after you create the gui. Make it in english
