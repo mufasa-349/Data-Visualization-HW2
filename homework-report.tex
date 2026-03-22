@@ -24,7 +24,7 @@
 \maketitle
 
 \begin{abstract}
-This report describes Task~1 of the homework: building an interactive Python dashboard for Japan inbound immigration statistics, analyzing the interface with Gestalt and Bertin principles, and documenting revisions made to improve visual encoding and readability. Screenshots of the dashboard \emph{before} and \emph{after} revision are included, together with a structured comparison of analytical findings and implemented changes. Program code for the dashboard and configuration was produced with assistance from \textbf{Cursor}, used as the AI coding agent in the development workflow.
+This report describes Task~1 of the homework: building an interactive Python dashboard for Japan inbound immigration statistics, analyzing the interface with Gestalt and Bertin principles, and documenting revisions made to improve visual encoding and readability. Screenshots of the dashboard \emph{before} and \emph{after} revision are included, together with a structured comparison of analytical findings, implemented changes, and \emph{user-visible benefits} of the revised interface. Program code for the dashboard and configuration was produced with assistance from \textbf{Cursor}, used as the AI coding agent in the development workflow.
 \end{abstract}
 
 \section{What we did (overview)}
@@ -41,7 +41,7 @@ This report describes Task~1 of the homework: building an interactive Python das
 \begin{itemize}[leftmargin=*]
   \item \textbf{What:} We analyzed the dashboard using \textbf{Gestalt} grouping principles (proximity, similarity, continuity, figure--ground, common region) and \textbf{Bertin's} visual variables (especially position, size, color/value, and redundant encoding).
   \item \textbf{How:} Findings were written in \texttt{task1-b-gestalt-bertin-analysis.txt}. The same criteria guided UI revisions in \texttt{dashboard.py}.
-  \item \textbf{Outcome:} The report below merges that analysis with a \textbf{before/after} narrative: Figure~\ref{fig:before} reflects the pre-revision UI; Section~\ref{sec:revision} summarizes changes aligned with the checklist; Figure~\ref{fig:after} shows the revised dashboard.
+  \item \textbf{Outcome:} The report below merges that analysis with a \textbf{before/after} narrative: Figure~\ref{fig:before} reflects the pre-revision UI; Section~\ref{sec:revision} summarizes changes aligned with the checklist; Figure~\ref{fig:after} shows the revised dashboard; Section~\ref{sec:compare} states explicitly \emph{what is better} after revision and why.
 \end{itemize}
 
 \section{Dashboard screenshot (before principles-based revision)}
@@ -144,17 +144,30 @@ Figure~\ref{fig:after} shows the revised dashboard. Visually, the total series n
   \label{fig:after}
 \end{figure}
 
-\section{Before vs.\ after --- concise comparison}
+\section{What is better after principles integration and revision?}
 \label{sec:compare}
 
+The revisions were not only cosmetic: they address the gaps identified in Section~\ref{sec:analysis} and make the dashboard \textbf{easier to read}, \textbf{less ambiguous}, and \textbf{more accessible} on a dark theme. Table~\ref{tab:checklist} lists \emph{what} changed; here we state \emph{why} the post-revision interface is stronger.
+
+\subsection{User-visible improvements (benefits)}
 \begin{itemize}[leftmargin=*]
-  \item \textbf{Gestalt:} Grouping of controls and charts was already good; revisions strengthened \textbf{similarity} between Streamlit accents and chart data (config primary color) and improved \textbf{closure} for the total trend (area fill). \textbf{Proximity} of meaning was improved through KPI help text and chart subtitles rather than by changing the four-column KPI layout.
-  \item \textbf{Bertin:} \textbf{Position} was left correct; \textbf{redundant encoding} was added for YoY (hue plus vertical position); \textbf{color value} and tick contrast were systematized; line \textbf{mark} noise was reduced. Units and field definitions are now explicit in labels, subtitles, and tooltips.
+  \item \textbf{Faster reading of the main trend (Gestalt closure):} The filled area under the annual total reinforces ``volume over time'' at a glance; removing dense per-year point markers reduces clutter so the long-run pattern stands out.
+  \item \textbf{Clearer year-over-year story (Bertin redundant encoding):} Positive and negative changes are distinguishable both by bar direction \emph{and} by color, so users do not rely on a single channel; the zero baseline is visually sharper.
+  \item \textbf{Less confusion between UI chrome and data (Gestalt similarity):} Aligning Streamlit's primary accent with the chart palette (\texttt{config.toml}) reduces the chance that control colors are mistaken for ``bad'' or ``negative'' data, compared with a stronger mismatch between red UI accents and green KPI deltas.
+  \item \textbf{Explicit meaning of numbers (annotation):} Chart subtitles, axis titles with units (\emph{count per year}), KPI tooltips, and the YoY caption explain what \texttt{total} means and why the first filtered year has no YoY bar---reducing misinterpretation.
+  \item \textbf{More comfortable reading on dark backgrounds (contrast):} Systematic tick and title colors in \texttt{apply\_dashboard\_theme()} improve legibility of axes and legends relative to an ad hoc default styling.
+  \item \textbf{Coherent visual language across tabs:} One theme function and shared palette logic (continents, heatmap colorbar) make the dashboard feel like one instrument rather than unrelated charts.
+\end{itemize}
+
+\subsection{Mapping principles to outcomes}
+\begin{itemize}[leftmargin=*]
+  \item \textbf{Gestalt:} Revisions strengthened \textbf{similarity} (UI vs.\ data color harmony), \textbf{closure} (area fill for totals), and \textbf{proximity of meaning} (subtitles and help near the metrics they explain). Layout grouping was already sound and was preserved.
+  \item \textbf{Bertin:} \textbf{Position} for time and magnitude was kept; \textbf{redundant encoding} was added for YoY sign; \textbf{color value} and tick contrast were standardized; unnecessary \textbf{mark} noise on the line chart was removed. Definitions and units are now tied explicitly to encodings (labels and tooltips).
 \end{itemize}
 
 \section{Conclusion}
 
-We built an interactive Japan inbound immigration dashboard in Python (Streamlit + Plotly), analyzed it with Gestalt and Bertin lenses, and applied a focused set of revisions: thematic consistency, redundant sign encoding for YoY, improved typography/contrast, area fill for the total series, and clearer documentation of metrics directly in the UI. The screenshots \texttt{task1-a.png} and \texttt{task1-b.png} document the interface before and after these changes.
+We built an interactive Japan inbound immigration dashboard in Python (Streamlit + Plotly), analyzed it with Gestalt and Bertin lenses, and applied a focused set of revisions. After integration of these principles, the interface improves in \textbf{interpretive clarity} (what each number means), \textbf{encoding redundancy} for signed change (YoY), \textbf{visual continuity} for the level series (area fill), \textbf{legibility} (contrast and typography), and \textbf{consistency} across charts and the Streamlit shell. The screenshots \texttt{task1-a.png} and \texttt{task1-b.png} document the interface before and after these changes; Section~\ref{sec:compare} summarizes concrete benefits of the revised version.
 
 \section*{AI tooling disclosure}
 

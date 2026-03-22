@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.11.24)  23 MAR 2026 00:21
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.11.24)  23 MAR 2026 00:23
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -391,7 +391,7 @@ Overfull \hbox (15.87254pt too wide) in paragraph at lines 37--38
 [1
 
 {/usr/local/texlive/2025basic/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/local/texlive/2025basic/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/usr/local/texlive/2025basic/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}]
-<task1-a.png, id=79, 1445.4pt x 813.0375pt>
+<task1-a.png, id=88, 1445.4pt x 813.0375pt>
 File: task1-a.png Graphic file (type png)
 <use task1-a.png>
 Package pdftex.def Info: task1-a.png  used on input line 54.
@@ -410,7 +410,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 128--129
 []\T1/lmtt/m/n/10 st.plotly_chart(..., width="stretch") \T1/lmr/m/n/10 in-
  []
 
-<task1-b.png, id=88, 2890.8pt x 2270.4825pt>
+<task1-b.png, id=97, 2890.8pt x 2270.4825pt>
 File: task1-b.png Graphic file (type png)
 <use task1-b.png>
 Package pdftex.def Info: task1-b.png  used on input line 142.
@@ -420,11 +420,11 @@ Package pdftex.def Info: task1-b.png  used on input line 142.
 [3]
 
 [4 <./task1-b.png>]
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10.95> on input line 162.
-
 
 [5]
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10.95> on input line 175.
+
 
 [6] (./homework-report.aux)
  ***********
@@ -432,21 +432,21 @@ LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
  ***********
 Package rerunfilecheck Info: File `homework-report.out' has not changed.
-(rerunfilecheck)             Checksum: F1AE66AD72AE62A9838A7EE9C700C149;3038.
+(rerunfilecheck)             Checksum: 83C0803C67296585A4B97AF25A05BC73;3608.
  ) 
 Here is how much of TeX's memory you used:
- 11256 strings out of 474662
- 182478 string characters out of 5751108
- 584499 words of memory out of 5000000
- 34126 multiletter control sequences out of 15000+600000
- 620559 words of font info for 74 fonts, out of 8000000 for 9000
+ 11261 strings out of 474662
+ 182555 string characters out of 5751108
+ 584520 words of memory out of 5000000
+ 34129 multiletter control sequences out of 15000+600000
+ 624822 words of font info for 75 fonts, out of 8000000 for 9000
  319 hyphenation exceptions out of 8191
- 75i,10n,79p,698b,567s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 75i,10n,79p,827b,565s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2025basic/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/2025basic/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2025basic/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2025basic/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2025basic/texmf-dist/fonts/type1/public/lm/lmr17.pfb></usr/local/texlive/2025basic/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/local/texlive/2025basic/texmf-dist/fonts/type1/public/lm/lmri10.pfb></usr/local/texlive/2025basic/texmf-dist/fonts/type1/public/lm/lmtt10.pfb>
-Output written on homework-report.pdf (6 pages, 509999 bytes).
+Output written on homework-report.pdf (6 pages, 519003 bytes).
 PDF statistics:
- 158 PDF objects out of 1000 (max. 8388607)
- 127 compressed objects within 2 object streams
- 26 named destinations out of 1000 (max. 500000)
- 123 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 170 PDF objects out of 1000 (max. 8388607)
+ 139 compressed objects within 2 object streams
+ 28 named destinations out of 1000 (max. 500000)
+ 139 words of extra memory for PDF output out of 10000 (max. 10000000)
 
