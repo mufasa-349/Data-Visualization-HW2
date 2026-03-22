@@ -17,7 +17,7 @@
 
 \hypersetup{colorlinks=true, linkcolor=blue, urlcolor=blue, citecolor=blue}
 
-\title{Data Visualization --- Task 1 (A \& B)\\Japan Inbound Immigration Dashboard}
+\title{Data Visualization Homework\\Task 1 (Japan immigration) \& Task 2 Part A (Whoop dataset analysis)}
 \author{Mustafa Bozyel 32417}
 \date{\today}
 
@@ -31,8 +31,10 @@
 \vspace{0.75em}
 
 \begin{abstract}
-This report describes Task~1 of the homework: building an interactive Python dashboard for Japan inbound immigration statistics, analyzing the interface with Gestalt and Bertin principles, and documenting revisions made to improve visual encoding and readability. Screenshots of the dashboard \emph{before} and \emph{after} revision are included, together with a structured comparison of analytical findings, implemented changes, and \emph{user-visible benefits} of the revised interface. Program code for the dashboard and configuration was produced with assistance from \textbf{Cursor}, used as the AI coding agent in the development workflow.
+This report has two parts. \textbf{Task~1} covers building an interactive Python dashboard for Japan inbound immigration statistics, a Gestalt/Bertin analysis of the interface, and screenshots before and after UI revision (with \textbf{Cursor} as the AI coding assistant). \textbf{Task~2 Part~A} analyzes the \texttt{whoop\_fitness\_dataset\_100k.csv} file: what the columns mean, and which attributes would be most useful in a mobile fitness app and why. \textbf{Task~2 Part~B} presents mobile dashboard sketches (Figures~\ref{fig:sketch1}--\ref{fig:sketch2}), with Gestalt/Bertin-based design notes tied to the CSV attributes.
 \end{abstract}
+
+\part{Task 1 --- Japan immigration dashboard}
 
 \section{What we did (overview)}
 
@@ -172,9 +174,137 @@ The revisions were not only cosmetic: they address the gaps identified in Sectio
   \item \textbf{Bertin:} \textbf{Position} for time and magnitude was kept; \textbf{redundant encoding} was added for YoY sign; \textbf{color value} and tick contrast were standardized; unnecessary \textbf{mark} noise on the line chart was removed. Definitions and units are now tied explicitly to encodings (labels and tooltips).
 \end{itemize}
 
-\section{Conclusion}
+\section{Conclusion (Task 1)}
 
 We built an interactive Japan inbound immigration dashboard in Python (Streamlit + Plotly), analyzed it with Gestalt and Bertin lenses, and applied a focused set of revisions. After integration of these principles, the interface improves in \textbf{interpretive clarity} (what each number means), \textbf{encoding redundancy} for signed change (YoY), \textbf{visual continuity} for the level series (area fill), \textbf{legibility} (contrast and typography), and \textbf{consistency} across charts and the Streamlit shell. The screenshots \texttt{task1-a.png} and \texttt{task1-b.png} document the interface before and after these changes; Section~\ref{sec:compare} summarizes concrete benefits of the revised version.
+
+% ---------------------------------------------------------------------------
+\part{Task 2 --- Whoop-style fitness dataset}
+
+\section{Task 2 Part A: Analysis of the Whoop health dataset (for a mobile app)}
+\label{sec:whoop}
+
+This section looks at \path{whoop_fitness_dataset_100k.csv}. The file has one row per user per day (about 100k rows). It is built like a \textbf{wearable / Whoop-style} daily log: sleep, recovery, strain, workouts, and heart metrics. Below I explain what is in the data and what I would actually show in a \textbf{phone app} and why.
+
+\subsection{What the dataset contains (big picture)}
+Each row is a \textbf{single day} for one \texttt{user\_id}. You get the date, day of week, some \textbf{profile} fields (age, gender, height, weight), and then numbers that describe \textbf{readiness}, \textbf{load}, \textbf{sleep}, and \textbf{activity}. Workout-related columns are filled when the person trained; on rest days the activity type is often ``Rest Day'' and duration/strain can be zero.
+
+\subsection{Column groups (simple overview)}
+\begin{itemize}[leftmargin=*]
+  \item \textbf{Time and identity:} \texttt{user\_id}, \texttt{date}, \texttt{day\_of\_week} --- needed to sort days and build a calendar or timeline in the app.
+  \item \textbf{Profile:} \texttt{age}, \texttt{gender}, \texttt{weight\_kg}, \texttt{height\_cm}, \texttt{fitness\_level}, \texttt{primary\_sport} --- good for onboarding screens, goals, and simple personalization (not something that changes every hour).
+  \item \textbf{Daily readiness / load (``Whoop-like'' scores):} \texttt{recovery\_score}, \texttt{day\_strain} --- these are the numbers users often want \textbf{on the home screen}: ``how ready am I?'' vs.\ ``how hard was today?''.
+  \item \textbf{Sleep:} \texttt{sleep\_hours}, \texttt{sleep\_efficiency}, \texttt{sleep\_performance}, \texttt{light\_sleep\_hours}, \texttt{rem\_sleep\_hours}, \texttt{deep\_sleep\_hours}, \texttt{wake\_ups}, \texttt{time\_to\_fall\_asleep\_min} --- perfect for a \textbf{sleep tab}: total time, quality, and stage breakdown.
+  \item \textbf{Heart and stress signals:} \texttt{hrv}, \texttt{resting\_heart\_rate}, \texttt{hrv\_baseline}, \texttt{rhr\_baseline}, \texttt{respiratory\_rate}, \texttt{skin\_temp\_deviation} --- useful for ``recovery'' and health trends; comparing today to \textbf{baseline} helps users see if they are off their normal (tired, sick, etc.).
+  \item \textbf{Energy:} \texttt{calories\_burned} --- easy to show as a daily ring or total, similar to other fitness apps.
+  \item \textbf{Workout block:} \texttt{workout\_completed}, \texttt{activity\_type}, \texttt{activity\_duration\_min}, \texttt{activity\_strain}, \texttt{avg\_heart\_rate}, \texttt{max\_heart\_rate}, \texttt{activity\_calories}, \texttt{hr\_zone\_1\_min}--\texttt{hr\_zone\_5\_min}, \texttt{workout\_time\_of\_day} --- detail screen after a session: what sport, how long, how hard, and time in heart-rate zones.
+\end{itemize}
+
+\subsection{Which attributes are most useful in a mobile app (and why)}
+\begin{itemize}[leftmargin=*]
+  \item \textbf{\texttt{recovery\_score} + \texttt{day\_strain}:} Very useful. On a small screen you want \textbf{two clear numbers} that answer: ``Can I train hard today?'' and ``Did I already load my body?'' They match how real wearables market their product, so users understand them quickly.
+  \item \textbf{Sleep totals and stages (\texttt{sleep\_hours}, efficiency, light/REM/deep):} Very useful. People open health apps in the morning to see \textbf{how long} they slept and \textbf{sleep quality}. Stages help users see if deep/REM was short even when total hours look okay.
+  \item \textbf{\texttt{hrv} and \texttt{resting\_heart\_rate} with baselines:} Useful for a ``recovery'' or ``body status'' card. If today's HRV is far from \texttt{hrv\_baseline} or RHR is off \texttt{rhr\_baseline}, the app can show a gentle warning (rest day, not a medical diagnosis---just trend).
+  \item \textbf{\texttt{calories\_burned}:} Useful for users who care about energy balance; easy to show as one number or a progress ring.
+  \item \textbf{Workout summary (\texttt{activity\_type}, \texttt{activity\_duration\_min}, \texttt{activity\_strain}, HR avg/max, \texttt{activity\_calories}):} Essential on the \textbf{workout detail} page. The user wants to see what they did and how hard it was without scrolling forever.
+  \item \textbf{Heart-rate zones (\texttt{hr\_zone\_1\_min}--\texttt{hr\_zone\_5\_min}):} Useful for people who train with intensity, but on mobile it is better to show a \textbf{small bar chart or one line of text} (e.g.\ ``12 min hard'') instead of five raw numbers, so the screen does not feel crowded.
+  \item \textbf{\texttt{workout\_time\_of\_day}:} Nice for habits---morning vs.\ evening training---and for simple insights (``you usually work out in the evening'').
+  \item \textbf{Profile fields (\texttt{fitness\_level}, \texttt{primary\_sport}):} Good for recommendations and filtering (beginner vs.\ advanced), not for daily graphs.
+\end{itemize}
+
+\subsection{Attributes that are less critical on the phone (or need simplification)}
+\begin{itemize}[leftmargin=*]
+  \item \textbf{Five separate HR zone columns:} Important for training nerds, but the app should \textbf{aggregate} them for the main view (e.g.\ total moderate + hard minutes).
+  \item \textbf{\texttt{skin\_temp\_deviation} and \texttt{respiratory\_rate}:} Still valuable for wellness, but many users will not look at them every day---better in a ``health details'' or weekly summary.
+  \item \textbf{\texttt{wake\_ups} and \texttt{time\_to\_fall\_asleep\_min}:} Good for sleep geeks; keep them on the sleep detail page, not on the home screen.
+\end{itemize}
+
+\subsection{Things to be careful about (student-level notes)}
+\begin{itemize}[leftmargin=*]
+  \item The data is \textbf{not real medical data} from our class project point of view---treat it as a \textbf{sample} for building UI and charts.
+  \item On \textbf{rest days}, workout fields are often zero or ``N/A''; the app must handle that so it does not look like a bug.
+  \item \textbf{Privacy:} a real app would need strong rules for \texttt{user\_id} and health fields; we only talk about \textbf{which columns are useful for design}, not about storing real patient data.
+\end{itemize}
+
+\subsection{Short summary}
+For a mobile app, I would prioritize \textbf{recovery}, \textbf{strain}, \textbf{sleep summary}, \textbf{HRV/RHR vs.\ baseline}, and \textbf{workout type + duration + strain + calories}. Heart-rate zones and extra sleep metrics are great on a second screen. Profile fields support onboarding and personalization. This matches what users expect from a Whoop-style experience: \textbf{simple daily scores first}, details when they tap.
+
+\section{Task 2 Part B: Mobile dashboard sketches (Whoop-style CSV)}
+\label{sec:task2b}
+
+This section shows \textbf{two} dashboard sketches (a third sketch can be added the same way). Both follow the Task~2 Part~A column choices and use Gestalt/Bertin ideas for small screens.
+
+\subsection{Sketch 1: \texttt{sketch1.jpeg}}
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.92\textwidth]{sketch1.jpeg}
+  \caption{Mobile dashboard sketch 1: Whoop-style health overview using CSV concepts (recovery, strain, sleep, HRV trend, HR zones).}
+  \label{fig:sketch1}
+\end{figure}
+
+\subsection{Mobile dashboard layout (four cards)}
+The dashboard is split into four main \textbf{cards} the user would see when opening the app.
+
+\begin{itemize}[leftmargin=*]
+  \item \textbf{Daily overview (``Ready to train?'')}: The most important metrics---\textbf{Recovery Score} and \textbf{Day Strain}---sit at the top. They map to \texttt{recovery\_score} and \texttt{day\_strain} in the CSV.
+  \item \textbf{Sleep analysis}: Shows sleep duration and quality with a \textbf{stacked} view of stages (light, REM, deep). This uses \texttt{sleep\_hours}, \texttt{sleep\_efficiency}, and stage columns such as \texttt{light\_sleep\_hours}, \texttt{rem\_sleep\_hours}, \texttt{deep\_sleep\_hours}.
+  \item \textbf{Recovery trends}: A \textbf{line chart} of HRV over several days compared to the user's \textbf{baseline}. This ties to \texttt{hrv}, \texttt{hrv\_baseline}, and related day-by-day rows.
+  \item \textbf{Activity summary}: Daily calories and \textbf{heart-rate zones} (time in each zone). This uses \texttt{calories\_burned} and \texttt{hr\_zone\_1\_min}--\texttt{hr\_zone\_5\_min}.
+\end{itemize}
+
+\subsection{Gestalt principles (how the sketch uses them)}
+\begin{itemize}[leftmargin=*]
+  \item \textbf{Proximity:} Numbers are grouped into clear cards. Sleep hours, efficiency, and stages stay in one block so the user reads them as one ``sleep'' unit.
+  \item \textbf{Similarity:} One color family (blue shades) for sleep stages (Deep, REM, Light) so they are seen as parts of the same sleep story.
+  \item \textbf{Continuity:} The HRV chart is a connected line so the eye follows the trend over time (up or down vs.\ scattered dots).
+  \item \textbf{Figure--ground:} Large, high-contrast numbers for Recovery and Strain (e.g.\ ``89\%'') stand out as the main ``figure'' on a calm background---quick read in under a second.
+\end{itemize}
+
+\subsection{Bertin's visual variables (Semiology of Graphics)}
+\begin{itemize}[leftmargin=*]
+  \item \textbf{Position:} Vertical \textbf{order} = importance (best scores at the top). Horizontal \textbf{time} on the HRV strip = last 7 days.
+  \item \textbf{Size:} Recovery and Strain digits are larger than other text, so the user knows what matters most for daily decisions.
+  \item \textbf{Value / color:}
+    \begin{itemize}
+      \item \textbf{Qualitative (status):} Green for high recovery, orange/red for low---fast status read.
+      \item \textbf{Sequential (intensity):} HR zone chart uses a yellow--to--red gradient: darker/warmer = harder effort.
+    \end{itemize}
+  \item \textbf{Shape / texture:} Solid line = current HRV; dashed line = baseline. Different texture so ``today'' vs.\ ``normal'' is clear without a heavy legend.
+\end{itemize}
+
+\subsection{Data mapping summary (what encodes what)}
+\begin{itemize}[leftmargin=*]
+  \item \textbf{Recovery \& Strain:} size and color (color = quick status).
+  \item \textbf{Sleep stages:} bar length + blue hue steps (composition of the night).
+  \item \textbf{HRV \& RHR:} \textbf{position} on a time axis (trend vs.\ baseline).
+  \item \textbf{HR zones:} bar length + saturation (redder = harder zone).
+\end{itemize}
+
+\subsection{Sketch 2: Dark theme \& advanced metrics (\texttt{sketch2.jpeg})}
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.92\textwidth]{sketch2.jpeg}
+  \caption{Mobile dashboard sketch 2: dark theme (\#0F0F0F), extra vitals (\texttt{respiratory\_rate}, \texttt{skin\_temp\_deviation}), baselines as context, HR zones, and activity detail.}
+  \label{fig:sketch2}
+\end{figure}
+
+Sketch~2 is a \textbf{dark-mode} layout aimed at high contrast in low light. It pulls in \textbf{more columns} from the CSV than sketch~1: breathing and skin temperature sit next to heart metrics, and baselines appear next to live values.
+
+\paragraph{New features (data mapping).}
+\begin{itemize}[leftmargin=*]
+  \item \textbf{Health monitor card:} Combines \texttt{respiratory\_rate} and \texttt{skin\_temp\_deviation} with HR-style signals so the user sees a wider ``internal state'' in one place.
+  \item \textbf{Baseline comparisons:} Today's HRV/RHR are shown with \texttt{hrv\_baseline} and \texttt{rhr\_baseline} as reference (small text or subscript). Bertin: \textbf{position} and alignment make ``now vs.\ normal'' easy to compare without a second chart.
+  \item \textbf{Intensity (HR zones):} Uses \texttt{hr\_zone\_1\_min} through \texttt{hr\_zone\_5\_min} in a horizontal bar---left-to-right matches ``easy $\rightarrow$ hard'' reading.
+  \item \textbf{Activity block:} \texttt{activity\_type}, duration, avg/max HR, and \texttt{activity\_calories} with a bar so calories read as \textbf{length} (Bertin: size for quantity).
+\end{itemize}
+
+\paragraph{Gestalt (short).}
+\textbf{Closure:} Each topic lives in its own card (health vs.\ activity) so groups are clear without thick lines. \textbf{Figure--ground:} Neon-style greens/blues/reds on near-black make numbers jump forward. \textbf{Similarity:} Repeated pattern Value $\rightarrow$ Label $\rightarrow$ Baseline in the health strip teaches one rhythm. \textbf{Proximity:} Duration, avg HR, and max HR stay together as one workout event.
+
+\paragraph{Bertin (short).}
+Recovery/Strain stay \textbf{larger} than the monitor tiles (global vs.\ supportive metrics). \textbf{Hue} on zones runs green$\rightarrow$yellow$\rightarrow$orange$\rightarrow$red for aerobic$\rightarrow$anaerobic. \textbf{Orientation:} Horizontal zones save vertical space for labels. \textbf{Position:} Readiness block stays at the \textbf{top} (highest priority).
 
 \section*{AI tooling disclosure}
 
@@ -184,9 +314,11 @@ We built an interactive Japan inbound immigration dashboard in Python (Streamlit
 \section*{Data and code}
 \begin{sloppypar}
 \noindent
-Data file: \path{japan_immigration_statistics_inbound.csv}.\\
-Main script: \path{dashboard.py}.\\
-Analysis notes: \path{task1-b-gestalt-bertin-analysis.txt}.
+Task 1 data: \path{japan_immigration_statistics_inbound.csv}.\\
+Task 1 main script: \path{dashboard.py}.\\
+Task 1 analysis notes: \path{task1-b-gestalt-bertin-analysis.txt}.\\
+Task 2 Part A dataset: \path{whoop_fitness_dataset_100k.csv}.\\
+Task 2 Part B sketches: \path{sketch1.jpeg}, \path{sketch2.jpeg}.
 \end{sloppypar}
 
 \end{document}

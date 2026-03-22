@@ -173,7 +173,6 @@ INPUT /usr/local/texlive/2025basic/texmf-dist/fonts/tfm/public/lm/lmmi5.tfm
 INPUT /usr/local/texlive/2025basic/texmf-dist/fonts/tfm/public/lm/lmsy10.tfm
 INPUT /usr/local/texlive/2025basic/texmf-dist/fonts/tfm/public/lm/lmsy7.tfm
 INPUT /usr/local/texlive/2025basic/texmf-dist/fonts/tfm/public/lm/lmsy5.tfm
-INPUT /usr/local/texlive/2025basic/texmf-dist/fonts/tfm/public/lm/ec-lmri10.tfm
 INPUT /usr/local/texlive/2025basic/texmf-dist/fonts/tfm/public/lm/ec-lmr12.tfm
 INPUT /usr/local/texlive/2025basic/texmf-dist/fonts/tfm/public/lm/ec-lmbx12.tfm
 INPUT /usr/local/texlive/2025basic/texmf-dist/fonts/tfm/public/lm/ec-lmbx12.tfm
@@ -197,9 +196,11 @@ INPUT ./task1-b.png
 INPUT ./task1-b.png
 INPUT ./task1-b.png
 INPUT ./task1-b.png
+INPUT /usr/local/texlive/2025basic/texmf-dist/fonts/tfm/public/lm/ec-lmbx12.tfm
 INPUT /usr/local/texlive/2025basic/texmf-dist/fonts/tfm/public/lm/rm-lmr10.tfm
 INPUT /usr/local/texlive/2025basic/texmf-dist/fonts/tfm/public/lm/lmmi10.tfm
 INPUT /usr/local/texlive/2025basic/texmf-dist/fonts/tfm/public/lm/lmsy10.tfm
+INPUT /usr/local/texlive/2025basic/texmf-dist/fonts/tfm/public/lm/ec-lmtk10.tfm
 INPUT /usr/local/texlive/2025basic/texmf-dist/fonts/tfm/public/lm/ec-lmr8.tfm
 INPUT homework-report.aux
 INPUT ./homework-report.out
@@ -211,4 +212,5 @@ INPUT /usr/local/texlive/2025basic/texmf-dist/fonts/type1/public/lm/lmr12.pfb
 INPUT /usr/local/texlive/2025basic/texmf-dist/fonts/type1/public/lm/lmr17.pfb
 INPUT /usr/local/texlive/2025basic/texmf-dist/fonts/type1/public/lm/lmr8.pfb
 INPUT /usr/local/texlive/2025basic/texmf-dist/fonts/type1/public/lm/lmri10.pfb
+INPUT /usr/local/texlive/2025basic/texmf-dist/fonts/type1/public/lm/lmtk10.pfb
 INPUT /usr/local/texlive/2025basic/texmf-dist/fonts/type1/public/lm/lmtt10.pfb

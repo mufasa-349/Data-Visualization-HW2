@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Whoop Pro Elite Dashboard - Fixed</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root { 
+            --bg: #09090b; --card: #18181b; --text: #ffffff; --muted: #71717a;
+            --recovery: #10b981; --strain: #3b82f6; --sleep: #a855f7; --energy: #ef4444;
+        }
+        body { background: var(--bg); color: var(--text); font-family: 'Inter', sans-serif; margin: 0; display: flex; justify-content: center; }
+        .mobile-frame { width: 375px; height: 812px; position: relative; padding: 24px; overflow-y: auto; display: flex; flex-direction: column; box-sizing: border-box; border: 1px solid #27272a; border-radius: 40px; margin-top: 10px;}
+        
+        /* Header */
+        .header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px; }
+        .greeting { font-size: 22px; font-weight: 800; }
+        .level-tag { background: #27272a; padding: 4px 10px; border-radius: 20px; font-size: 10px; font-weight: bold; color: var(--muted); text-transform: uppercase; margin-top: 4px; display: inline-block; }
+
+        /* The Orbit Container */
+        .viz-section { position: relative; height: 300px; display: flex; align-items: center; justify-content: center; margin-bottom: 10px; }
+        #orbit-viz svg { position: relative; z-index: 1; display: block; }
+        .center-score { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); text-align: center; pointer-events: none; z-index: 10; }
+        .center-score .val { font-size: 56px; font-weight: 800; line-height: 1; color: var(--recovery); }
+        .center-score .lbl { font-size: 10px; color: var(--muted); text-transform: uppercase; letter-spacing: 2px; }
+
+        /* Health Grid */
+        .metrics-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 20px; }
+        .card { background: var(--card); border-radius: 16px; padding: 16px; position: relative; border-left: 4px solid var(--accent); }
+        .card .lbl { font-size: 10px; color: var(--muted); font-weight: 800; text-transform: uppercase; margin-bottom: 4px; }
+        .card .val { font-size: 20px; font-weight: 700; }
+        .card .sub { font-size: 10px; color: var(--muted); margin-top: 2px; }
+
+        /* Workout Card */
+        .workout-card { background: var(--card); border-radius: 16px; padding: 16px; margin-bottom: 100px; }
+        .zone-bar { display: flex; height: 6px; border-radius: 3px; overflow: hidden; margin: 12px 0; background: #27272a; }
+        .zone { height: 100%; }
+
+        /* Navigation */
+        .nav { position: absolute; bottom: 0; left: 0; width: 100%; height: 75px; background: rgba(9, 9, 11, 0.95); display: flex; justify-content: space-around; align-items: center; border-top: 1px solid #27272a; }
+        .nav-item { font-size: 11px; font-weight: bold; color: var(--muted); }
+        .nav-item.active { color: var(--strain); }
+    </style>
+</head>
+<body>
+    <div class="mobile-frame">
+        <header class="header">
+            <div>
+                <div class="greeting">Hello, Alex</div>
+                <div class="level-tag">Beginner Fitness</div>
+            </div>
+            <div style="width: 35px; height: 35px; background: #3b82f6; border-radius: 50%; border: 2px solid #1e1e1e;"></div>
+        </header>
+
+        <section class="viz-section" id="orbit-viz">
+            <div class="center-score">
+                <div class="val">91%</div>
+                <div class="lbl">Recovery</div>
+            </div>
+        </section>
+
+        <section class="metrics-grid">
+            <div class="card" style="--accent: var(--strain)"><div class="lbl">Strain</div><div class="val">10.9</div><div class="sub">Load: Moderate</div></div>
+            <div class="card" style="--accent: var(--sleep)"><div class="lbl">Sleep</div><div class="val">100%</div><div class="sub">5.0h Duration</div></div>
+            <div class="card" style="--accent: var(--recovery)"><div class="lbl">HRV</div><div class="val">102</div><div class="sub">Baseline: 101</div></div>
+            <div class="card" style="--accent: var(--energy)"><div class="lbl">RHR</div><div class="val">54</div><div class="sub">Baseline: 59</div></div>
+        </section>
+
+        <div class="workout-card">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+                <div style="font-size: 10px; color: var(--muted); font-weight: 800;">ACTIVITY INTENSITY</div>
+                <div style="color: var(--strain); font-size: 11px; font-weight: bold;">Weight Training</div>
+            </div>
+            <div class="zone-bar">
+                <div style="width: 20%; background: #4caf50;"></div>
+                <div style="width: 25%; background: #8bc34a;"></div>
+                <div style="width: 30%; background: #ffeb3b;"></div>
+                <div style="width: 15%; background: #ff9800;"></div>
+                <div style="width: 10%; background: #f44336;"></div>
+            </div>
+            <div style="display: flex; justify-content: space-between; font-size: 9px; color: var(--muted); font-weight: bold;">
+                <span>AEROBIC</span>
+                <span>45 MINS</span>
+                <span>ANAEROBIC</span>
+            </div>
+        </div>
+
+        <nav class="nav">
+            <div class="nav-item active">Home</div>
+            <div class="nav-item">Coach</div>
+            <div class="nav-item">Health</div>
+            <div class="nav-item">Profile</div>
+        </nav>
+    </div>
+
+    <script>
+        // Configuration — four rings: Strain, Sleep, HRV, RHR (matches metric cards)
+        const width = 300, height = 300;
+        const metrics = [
+            { id: "strain", val: 0.52, color: "#3b82f6", r: 118, width: 10 },
+            { id: "sleep",  val: 0.80, color: "#a855f7", r: 104, width: 10 },
+            { id: "hrv",    val: 0.72, color: "#10b981", r: 90,  width: 10 },
+            { id: "rhr",    val: 0.68, color: "#ef4444", r: 76,  width: 10 }
+        ];
+
+        // d3.arc() needs explicit startAngle/endAngle on the datum; cornerRadius on full 2π arcs can produce empty paths
+        function arcPath(innerR, outerR, startA, endA) {
+            return d3.arc()({
+                innerRadius: innerR,
+                outerRadius: outerR,
+                startAngle: startA,
+                endAngle: endA
+            });
+        }
+
+        const svg = d3.select("#orbit-viz")
+            .append("svg")
+            .attr("width", width)
+            .attr("height", height)
+            .append("g")
+            .attr("transform", `translate(${width / 2}, ${height / 2})`);
+
+        const tau = 2 * Math.PI;
+
+        // 1. Background tracks (full ring)
+        svg.selectAll(".track")
+            .data(metrics)
+            .enter()
+            .append("path")
+            .attr("class", "track")
+            .attr("d", d =>
+                arcPath(d.r - d.width / 2, d.r + d.width / 2, 0, tau)
+            )
+            .style("fill", "#27272a")
+            .style("opacity", 0.85);
+
+        // 2. Filled arcs (progress) — set initial d so paths are valid before transition
+        svg.selectAll(".active-arc")
+            .data(metrics)
+            .enter()
+            .append("path")
+            .attr("class", "active-arc")
+            .attr("d", d =>
+                arcPath(d.r - d.width / 2, d.r + d.width / 2, 0, 0.001)
+            )
+            .attr("fill", d => d.color)
+            .attr("stroke-linecap", "round")
+            .transition()
+            .duration(1200)
+            .delay((d, i) => i * 150)
+            .ease(d3.easeCubicOut)
+            .attrTween("d", function (d) {
+                const i = d3.interpolate(0, Math.max(0.02, d.val) * tau);
+                return function (t) {
+                    return arcPath(
+                        d.r - d.width / 2,
+                        d.r + d.width / 2,
+                        0,
+                        i(t)
+                    );
+                };
+            });
+    </script>
+</body>
+</html>
